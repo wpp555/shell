@@ -8,59 +8,71 @@ router.get("/", function (req, res, next) {
 
 router.get(`/sh/:id`, function (req, res) {
   const { id } = req.params;
+  // branch 必填 
+  let allObj = {
+    "test": {branch:'main',shell:'restart'},
+  }
+  if(allObj[id]){
+    res.send({
+      code: 0,
+      data: "正在更新，详细日志访问",
+      msg: "收到提示",
+    });
+  }else{
+    res.send({
+      code: 404,
+      data: "没有 "+id+" 的链接",
+      msg: "收到提示",
+    });
+    return;
+  }
   // 子进程
   var exec = require("child_process").exec; //需要执行的命令字符串
   var cli = "sh ./shell/" + id + ".sh"; // 执行命令
   exec(cli, { encoding: "utf8" }, function (err, stdout, stderr) {
-    // 如果抛出错误
-    if (err) {
-      console.log(`err`, err); // 返回结果
-      res.send({
-        code: -1,
-        data: `一些错误`,
-        msg: err,
-      });
-      return;
-    } // 如果没有错误,则执行命令成功
-    console.log("stdout >>>>>>>>>>>>> " + stdout);
-    console.log("stderr >>>>>>>>>>>>> " + stderr); // 返回结果
-    res.send({
-      code: 0,
-      data: "更新成功",
-      msg: `${stdout}----${stderr}`,
-    });
-    exec("sh ./shell/restart.sh", { encoding: "utf8" });
-  });
+    if(err){ // 如果抛出错误
+
+      return
+    }
+    // 如果没有错误,则执行命令成功
+
+  })
 });
 
 // post请求
 router.post(`/sh/:id`, function (req, res) {
   const { id } = req.params;
+  // branch 必填 
+  let allObj = {
+    "test": {branch:'main',shell:'restart'},
+  }
+  console.log(49)
+  console.log(req.body)
+  if(allObj[id]){
+    res.send({
+      code: 0,
+      data: "正在更新，详细日志访问",
+      msg: "收到提示",
+    });
+  }else{
+    res.send({
+      code: 404,
+      data: "没有 "+id+" 的链接",
+      msg: "收到提示",
+    });
+    return;
+  }
   // 子进程
   var exec = require("child_process").exec; //需要执行的命令字符串
   var cli = "sh ./shell/" + id + ".sh"; // 执行命令
   exec(cli, { encoding: "utf8" }, function (err, stdout, stderr) {
-    // 如果抛出错误
-    if (err) {
-      console.log(`err`, err); // 返回结果
-      res.send({
-        code: -1,
-        data: `一些错误`,
-        msg: err,
-      });
-      return;
-    } // 如果没有错误,则执行命令成功
-    console.log("stdout >>>>>>>>>>>>> " + stdout);
-    console.log("stderr >>>>>>>>>>>>> " + stderr); // 返回结果
-    res.send({
-      code: 0,
-      data: "更新成功",
-      msg: `${stdout}----${stderr}`,
-    });
-    setTimeout(() => {
-      exec("sh ./shell/restart.sh", { encoding: "utf8" });
-    }, 3000);
-  });
+    if(err){ // 如果抛出错误
+      
+      return
+    }
+    // 如果没有错误,则执行命令成功
+
+  })
 });
 
 module.exports = router;
