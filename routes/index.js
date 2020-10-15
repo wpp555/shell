@@ -57,7 +57,9 @@ router.post(`/sh/:id`, function (req, res) {
       data: "更新成功",
       msg: `${stdout}----${stderr}`,
     });
-    exec("sh ./shell/restart.sh", { encoding: "utf8" });
+    setTimeout(() => {
+      exec("sh ./shell/restart.sh", { encoding: "utf8" });
+    }, 3000);
   });
 });
 
