@@ -50,6 +50,7 @@ router.post(`/sh/:id`, function (req, res) {
   console.log(req.body.payload)
   console.log(JSON.parse(req.body.payload))
   console.log(req.body.payload.ref)
+  console.log(JSON.parse(req.body.payload).ref)
   if(allObj[id]){
     res.send({
       code: 0,
