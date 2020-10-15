@@ -3,7 +3,7 @@
 
 set -e
 
-echo 当前目录是：$(pwd)
+echo 接收到pull请求
 
 
 # 放日志目录
@@ -13,6 +13,10 @@ pwd1=$(pwd)
 time=$(date "+%Y-%m-%d %H:%M:%S")
 
 
+
 git pull origin main
+
+echo 拉取代码完成
+
 
 echo ${time} $(pwd) pull_github_main_shell >> ${pwd1}/push.log
