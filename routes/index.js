@@ -7,13 +7,11 @@ router.get("/", function (req, res, next) {
 });
 
 router.get(`/log`, function (req, res) {
-  
-    res.send({
-      code: 0,
-      data: "暂未开发",
-      msg: "提示",
-    });
-  
+  res.send({
+    code: 404,
+    data: "暂未开发日志功能",
+    msg: "提示",
+  });
 });
 
 // post请求
@@ -32,7 +30,7 @@ router.post(`/sh/:id`, function (req, res) {
   if(allObj[id]){
     if(refArr[refArr.length-1] === allObj[id].branch){
       res.send({
-        code: 0,
+        code: 200,
         data: "正在更新中，详细日志请访问 http://sh.wpp47.top/log",
         msg: "提示",
       });
