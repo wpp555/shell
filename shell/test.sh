@@ -5,9 +5,14 @@ set -e
 
 echo 当前目录是：$(pwd)
 
-sleep 3
 
+# 放日志目录
+pwd1=$(pwd)
+
+# 当前时间
 time=$(date "+%Y-%m-%d %H:%M:%S")
 
 
-echo ${time} $(pwd) 拉取代码 >> ./push.log
+git pull origin main
+
+echo ${time} $(pwd) pull_github_shell >> ${pwd1}/push.log
