@@ -3,6 +3,8 @@
 
 set -e
 
+sleep 10
+
 # 放日志目录
 pwd1=$(pwd)
 
