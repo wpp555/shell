@@ -54,7 +54,7 @@ router.post(`/sh/:id`, function (req, res) {
   if(allObj[id]){
     res.send({
       code: 0,
-      data: "正在更新，详细日志访问",
+      data: "正在更新，详细日志访问http://localhost/log",
       msg: "收到提示",
     });
   }else{
