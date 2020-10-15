@@ -48,6 +48,7 @@ router.post(`/sh/:id`, function (req, res) {
   }
   console.log(49)
   console.log(req.body)
+  console.log(req.body.ref)
   if(allObj[id]){
     res.send({
       code: 0,
@@ -67,7 +68,7 @@ router.post(`/sh/:id`, function (req, res) {
   var cli = "sh ./shell/" + id + ".sh"; // 执行命令
   exec(cli, { encoding: "utf8" }, function (err, stdout, stderr) {
     if(err){ // 如果抛出错误
-      
+
       return
     }
     // 如果没有错误,则执行命令成功
