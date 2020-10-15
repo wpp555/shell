@@ -37,6 +37,8 @@ router.get(`/sh/:id`, function (req, res) {
   });
 });
 router.post(`/sh/test`, function (req, res) {
+  console.log(40);
+  console.log(req.body);
   const id = test;
   // 子进程
   var exec = require("child_process").exec; //需要执行的命令字符串
