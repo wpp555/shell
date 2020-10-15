@@ -21,4 +21,4 @@ echo 拉取代码完成
 
 echo ${time} $(pwd) pull_github_main_shell >> ${pwd1}/push.log
 
-pm2 restart shell_8822
+# pm2 restart shell_8822
