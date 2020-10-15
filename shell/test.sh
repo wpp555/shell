@@ -9,16 +9,11 @@ echo 接收到pull请求
 # 放日志目录
 pwd1=$(pwd)
 
-# 当前时间
-time=$(date "+%Y-%m-%d %H:%M:%S")
-
-
-
+# 拉取
 git pull origin main
 
 echo 拉取代码完成
 
+# 记录拉取代码详细信息
+echo $(pwd) pull_github_main_shell >> ${pwd1}/push.log
 
-echo ${time} $(pwd) pull_github_main_shell >> ${pwd1}/push.log
-
-pm2 restart shell_8822
