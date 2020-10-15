@@ -15,4 +15,4 @@ time=$(date "+%Y-%m-%d %H:%M:%S")
 
 git pull origin main
 
-echo ${time} $(pwd) pull_github_shell >> ${pwd1}/push.log
+echo ${time} $(pwd) pull_github_main_shell >> ${pwd1}/push.log
