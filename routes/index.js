@@ -47,7 +47,6 @@ router.post(`/sh/:id`, function (req, res) {
     "test": {branch:'main',shell:'restart'},
   }
   console.log(49)
-  console.log(req.body)
   console.log(req.body.ref)
   if(allObj[id]){
     res.send({
