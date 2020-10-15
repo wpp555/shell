@@ -10,7 +10,7 @@ router.get(`/log`, function (req, res) {
   res.send({
     code: 404,
     data: "暂未开发日志功能",
-    msg: "提示",
+    msg: "提示"
   });
 });
 
