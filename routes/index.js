@@ -27,8 +27,8 @@ router.post(`/sh/:id`, function (req, res) {
     console.log("stderr >>>>>>>>>>>>> " + stderr); // 返回结果
     res.send({
       code: 0,
-      data: `更新成功`,
-      msg: `${stdout} >>>>>${stderr}`,
+      data: "更新成功",
+      msg: `${stdout}----${stderr}`,
     });
   });
 });
