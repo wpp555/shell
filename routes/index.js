@@ -48,6 +48,7 @@ router.post(`/sh/:id`, function (req, res) {
   }
   console.log(49)
   console.log(req.body.payload)
+  console.log(JSON.parse(req.body.payload))
   if(allObj[id]){
     res.send({
       code: 0,
