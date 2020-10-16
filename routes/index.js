@@ -25,6 +25,14 @@ router.post(`/sh/:id`, function (req, res) {
     test: { branch: "main", shell: "restart" },
   };
   let ref = JSON.parse(req.body.payload).ref;
+  if (!ref) {
+    res.send({
+      code: 404,
+      data: "没有检测到分支",
+      msg: "提示",
+    });
+    return;
+  }
   let refArr = ref.split("/");
 
   if (allObj[id]) {
