@@ -23,6 +23,7 @@ router.post(`/sh/:id`, function (req, res) {
    * */
   let allObj = {
     test: { branch: "main", shell: "restart" },
+    znote: { branch: "gh-pages" },
   };
   let ref = JSON.parse(req.body.payload).ref;
   if (!ref) {
