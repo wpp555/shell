@@ -15,7 +15,7 @@ router.get(`/log`, function (req, res) {
 });
 
 
-// post请求
+// get测试请求
 router.get(`/sh/:id`, function (req, res) {
   const { id } = req.params;
   /**
@@ -68,7 +68,7 @@ router.post(`/sh/:id`, function (req, res) {
    * */
   let allObj = {
     test: { branch: "main", shell: "restart" },
-    znote: { branch: "gh-pages" },
+    znote: { branch: "master" },
   };
   let ref = JSON.parse(req.body.payload).ref;
   if (!ref) {
