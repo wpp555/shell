@@ -29,9 +29,9 @@ echo 拉取代码完成
 time2=$(date "+%Y-%m-%d %H:%M:%S")
 
 # 记录 拉取时间 拉取代码详细信息
-echo ${time2} pull_success $(pwd) >> ${pwd1}/push.log
+echo ${time2} $(pwd) pull_success >> ${pwd1}/push.log
 
-sleep 1
+sleep 6
 
 # 重启
 pm2 restart shell_8822
